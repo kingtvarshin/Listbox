@@ -1,0 +1,61 @@
+
+.container-all {
+height:15em;
+width:35%;
+float:left;
+border-radius:5px;
+border: 1px solid #ccc;
+background: #fff;
+transition: box-shadow .3s;
+overflow:scroll;
+}
+
+.container-all:hover {
+box-shadow: 0 0 11px rgba(33,33,33,.2); 
+}
+
+#container {
+width:70%;
+margin:1em;
+}
+/* container-middle */
+#container-middle {
+width:10%;
+float:left;
+text-align:center;
+padding:6% 0;
+}
+.cointainer-button {
+
+display: inline-block;
+padding: 0px 30%;
+margin-top:1%;
+font-size: 15px;
+cursor: pointer;
+text-align: center;
+text-decoration: none;
+outline: none;
+color: #fff;
+background-color: #b8bfba;
+border-radius: 2px;
+}
+
+
+li {
+  display: block;
+  padding: 16px;
+  width:25%;
+  text-decoration: none;
+  border-radius:5px;
+  border: 1px solid #ccc;
+  text-align: center;
+  margin: 16px;
+}
+
+li:hover {
+  background-color: #f2f2f2;
+}
+
+.active:hover {
+  cursor: pointer;
+}

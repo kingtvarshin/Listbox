@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="/Users/vikrantsingh/Desktop/listbox/CSS/listbox.css">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"> </script>
+</head>
+
+<body ng-app="myApp" ng-controller="myCtrl">
+
+<div id="container">
+<div id="container-first" class="container-all">
+<ul id='lstBox1' ng-model="string">
+<li id="list1" ng-repeat="x in record0" class="active" ng-click="selectri($index)" >{{x}}</li>
+</ul>
+</div>
+
+<div id="container-middle">
+<button class="cointainer-button" id='btnRight' ng-click="right()"> <span>&#8594;</span></button><br/>
+<button class="cointainer-button" id='btnLeft' ng-click="left()"> <span>&#8592; </span> </button><br/>
+<button class="cointainer-button" id='btnAllRight' ng-click="both()"> <span>&#8596;</span> </button>
+</div>
+
+<div class="container-all" id="container-last">
+<ul id='lstBox2' ng-model="string" >
+<li id="list2" ng-repeat="y in record1" class="active" ng-click="selectlf($index)">{{y}}</li>
+</ul>
+</div>
+
+<div>{{tranfer}}</div>
+<div>{{tranfer2}}</div>
+<div>{{record0}}</div>
+<div>{{record1}}</div>
+</div>
+
+<script src="/Users/vikrantsingh/Desktop/listbox/js/jsonread.js"></script>
+
+</body>
+</html>
+
+

@@ -11,7 +11,7 @@
 <div id="container">
 <div id="container-first" class="container-all">
 <ul id='lstBox1' ng-model="string">
-<li id="list1" ng-repeat="x in record0" class="active" ng-click="selectri($index)" >{{x}}</li>
+<li id="list1" ng-repeat="x in record0" class="active" ng-click="selectri($index)" ng-dblclick="sendr($index)" >{{x}}</li>
 </ul>
 </div>
 
@@ -23,14 +23,12 @@
 
 <div class="container-all" id="container-last">
 <ul id='lstBox2' ng-model="string" >
-<li id="list2" ng-repeat="y in record1" class="active" ng-click="selectlf($index)">{{y}}</li>
+<li id="list2" ng-repeat="y in record1" class="active" ng-click="selectlf($index)" ng-dblclick="sendl($index)" >{{y}}</li>
 </ul>
 </div>
 
 <div>{{tranfer}}</div>
 <div>{{tranfer2}}</div>
-<div>{{record0}}</div>
-<div>{{record1}}</div>
 </div>
 
 <script src="/Users/vikrantsingh/Desktop/listbox/js/jsonread.js"></script>

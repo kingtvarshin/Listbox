@@ -10,36 +10,45 @@ app.controller("myCtrl", function($scope, $window) {
   $scope.record1 = obj.secondArray;
   $scope.tranfer =[];
   $scope.tranfer2=[];
-  $scope.final = $scope.record1;
-  $scope.init = $scope.record0;
+
+  //double click
+   $scope.sendr = function(index){
+    $scope.record1 = $scope.record1.push($scope.record0[index])
+    $scope.record0 = $scope.record0.filter( ( el ) => !$scope.record1.includes( el ) );
+   };
+   $scope.sendl = function(index){
+    $scope.record0 = $scope.record0.push($scope.record1[index])
+    $scope.record1 = $scope.record1.filter( ( el ) => !$scope.record0.includes( el ) );
+    alert(index);
+   };
 
   //onclick for left ul
   $scope.selectri = function(index){
     if($scope.tranfer.indexOf($scope.record0[index]) !== -1)
     {
-        $scope.tranfer.splice($scope.tranfer.indexOf($scope.record0[index]),1)
-      } 
-          else{
-        $scope.tranfer.push($scope.record0[index])
-      }
-    };
+      $scope.tranfer.splice($scope.tranfer.indexOf($scope.record0[index]),1)
+    }
+    else
+    {
+      $scope.tranfer.push($scope.record0[index])
+    }
+  };
 
     //onclick for right ul
   $scope.selectlf = function(index){
     if($scope.tranfer2.indexOf($scope.record1[index]) !== -1)
     {
-        $scope.tranfer2.splice($scope.tranfer2.indexOf($scope.record1[index]),1)
-      } 
-          else{
-        $scope.tranfer2.push($scope.record1[index])
-      }
-    };
+      $scope.tranfer2.splice($scope.tranfer2.indexOf($scope.record1[index]),1)
+    }
+    else{
+      $scope.tranfer2.push($scope.record1[index])
+    }
+  };
 
     //onclick for right btn
    $scope.right = function(){
     $scope.record1 = $scope.record1.concat($scope.tranfer)
     $scope.record0 = $scope.record0.filter( ( el ) => !$scope.tranfer.includes( el ) );
-    $scope.final = $scope.record1;
     $scope.tranfer =[];
    };
 
@@ -47,7 +56,6 @@ app.controller("myCtrl", function($scope, $window) {
    $scope.left = function(){
     $scope.record0 = $scope.record0.concat($scope.tranfer2)
     $scope.record1 = $scope.record1.filter( ( el ) => !$scope.tranfer2.includes( el ) );
-    $scope.init = $scope.record0;
     $scope.tranfer2 =[];
    }; 
 
@@ -62,6 +70,8 @@ app.controller("myCtrl", function($scope, $window) {
       $scope.record1 = $scope.record1.filter( ( el ) => !$scope.record1.includes( el ) );
     }
    };
+
+   
   }
 
 

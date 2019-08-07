@@ -13,13 +13,12 @@ app.controller("myCtrl", function($scope, $window) {
 
   //double click
    $scope.sendr = function(index){
-    $scope.record1 = $scope.record1.push($scope.record0[index])
+    $scope.record1 = $scope.record1.concat($scope.record0[index])
     $scope.record0 = $scope.record0.filter( ( el ) => !$scope.record1.includes( el ) );
    };
    $scope.sendl = function(index){
-    $scope.record0 = $scope.record0.push($scope.record1[index])
+    $scope.record0 = $scope.record0.concat($scope.record1[index])
     $scope.record1 = $scope.record1.filter( ( el ) => !$scope.record0.includes( el ) );
-    alert(index);
    };
 
   //onclick for left ul
